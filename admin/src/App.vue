@@ -1,26 +1,5 @@
 <template>
-    <a-config-provider :locale="locale">
-    <router-view/>
-  </a-config-provider>
+	<router-view></router-view>
 </template>
 
-<script lang="ts">
-
-    import { reactive, toRefs } from '@vue/composition-api'
-
-    export default {
-        setup () {
-            const state = reactive({
-                count: 0,
-            })
-
-            return {
-                ...toRefs(state),
-            }
-        }
-    }
-</script>
-
-<style lang="scss">
-
-</style>
+<style lang="less"></style>

@@ -1,15 +1,15 @@
 {
-  "name": "vuepress_admin",
+  "name": " vuepress-admin",
   "version": "1.0.0",
-  "description": "VuePressAdmin",
+  "description": "VuePress Admin",
   "private": true,
   "egg": {
     "typescript": true,
     "declarations": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-vuepress_admin",
-    "stop": "egg-scripts stop --title=egg-server-vuepress_admin",
+    "start": "egg-scripts start --daemon --title=egg-server- vuepress-admin",
+    "stop": "egg-scripts stop --title=egg-server- vuepress-admin",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test-local": "egg-bin test",
@@ -22,18 +22,8 @@
     "clean": "ets clean"
   },
   "dependencies": {
-    "ant-design-vue": "^2.0.0-beta.10",
-    "babel-plugin-import": "^1.13.0",
     "egg": "^2.6.1",
-    "egg-cors": "^2.2.3",
-    "egg-jwt": "^3.1.7",
-    "egg-scripts": "^2.6.0",
-    "egg-sequelize": "^5.2.2",
-    "egg-view-vue-ssr": "^3.3.3",
-    "moment": "^2.27.0",
-    "mysql2": "^2.1.0",
-    "sequelize-typescript": "^1.1.0",
-    "vue": "^2.6.12"
+    "egg-scripts": "^2.6.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -41,13 +31,12 @@
     "@types/supertest": "^2.0.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
-    "egg-bin": "^4.11.0",
     "egg-ci": "^1.8.0",
+    "egg-bin": "^4.11.0",
     "egg-mock": "^3.16.0",
+    "tslib": "^1.9.0",
     "eslint": "^6.7.2",
     "eslint-config-egg": "^8.0.0",
-    "sequelize-cli": "^6.2.0",
-    "tslib": "^1.9.0",
     "typescript": "^3.0.0"
   },
   "engines": {
@@ -63,6 +52,6 @@
   "eslintIgnore": [
     "coverage"
   ],
-  "author": "ihooge",
+  "author": "MrHooge",
   "license": "MIT"
 }
