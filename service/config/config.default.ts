@@ -44,6 +44,10 @@ export default (appInfo: EggAppInfo) => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
 
+  config.jwt = {
+    secret: '7socq7IKlQ@FQlD3sGAtYLjlrDL5R6wh',
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,

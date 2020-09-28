@@ -2,10 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportHero from '../../../app/model/hero';
+import ExportHome from '../../../app/model/home';
 
 declare module 'egg' {
   interface IModel {
-    Hero: ReturnType<typeof ExportHero>;
+    Home: ReturnType<typeof ExportHome>;
   }
 }
