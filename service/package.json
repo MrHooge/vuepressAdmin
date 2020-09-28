@@ -22,6 +22,8 @@
     "clean": "ets clean"
   },
   "dependencies": {
+    "ant-design-vue": "^2.0.0-beta.10",
+    "babel-plugin-import": "^1.13.0",
     "egg": "^2.6.1",
     "egg-cors": "^2.2.3",
     "egg-scripts": "^2.6.0",
