@@ -1,14 +1,15 @@
 <template>
 	<div class="common-layout">
-		<div class="content"><v-slot></v-slot></div>
+		<div class="content"><slot></slot></div>
 		<page-footer :link-list="footerLinks" :copyright="copyright"></page-footer>
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import PageFooter from '@/layouts/footer/PageFooter.vue';
+import PageFooter from '@/layouts/footer/PageFooter';
 import { mapState } from 'vuex';
+
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'CommonLayout',
@@ -22,13 +23,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .common-layout {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	overflow: auto;
-	background-color: @layout-body-background;
+	background-color: #efefef;
 	background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
 	background-repeat: no-repeat;
 	background-position-x: center;

@@ -1,34 +1,30 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
-// import NProgress from "nprogress"; // progress bar
-// import "nprogress/nprogress.css"; // progress bar style
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import WorkPlace from '../views/dashboard/workplace/WorkPlace.vue';
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/login",
-    name: "登录页",
-    component: () => import("@/views/login/login.vue")
-  },
-  // {
-  // 	path: '*',
-  // 	name: '404',
-  // 	component: () => import('@/views/exception/404'),
-  // },
-  // {
-  // 	path: '/403',
-  // 	name: '403',
-  // 	component: () => import('@/views/exception/403'),
-  // },
-  {
-    path: "/",
-    name: "首页",
-    component: () => import("@/views/dashbroad/workspace/workplace.vue")
-  }
+	{
+		path: '/',
+		name: 'Home',
+		component: WorkPlace,
+	},
+	{
+		path: '/analysis',
+		name: 'Analysis',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "about" */ '../views/dashboard/analysis/Analysis.vue'),
+	},
+	{
+		path: '/login',
+		name: 'Login',
+		component: () => import(/* webpackChunkName: "about" */ '../views/login/Login.vue'),
+	},
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+	history: createWebHistory(process.env.BASE_URL),
+	routes,
 });
 
 export default router;

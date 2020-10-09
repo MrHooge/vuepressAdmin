@@ -1,12 +1,18 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import Antd from "ant-design-vue";
-import "ant-design-vue/dist/antd.css";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .use(Antd)
-  .mount("#app");
+import { AppConfig } from '@/config/app';
+
+import { loadAllPlugins } from '@/plugins';
+
+const app: ReturnType<typeof createApp> = createApp(App);
+
+app.config.globalProperties = AppConfig;
+
+loadAllPlugins(app);
+
+app.use(store)
+	.use(router)
+	.mount('#app');
