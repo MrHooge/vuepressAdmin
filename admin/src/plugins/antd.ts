@@ -1,5 +1,5 @@
-import { Button, Card, Row, Col, Tag, Form, Input } from 'ant-design-vue';
-import { createApp } from 'vue';
+import { Button, Card, Row, Col, Tag, Form, Input } from "ant-design-vue";
+import { createApp } from "vue";
 
 /**
  * @description 手动注册 antd-vue 组件,达到按需加载目的
@@ -8,11 +8,11 @@ import { createApp } from 'vue';
  * @returns void
  */
 export default function loadComponent(app: ReturnType<typeof createApp>) {
-	app.use(Button);
-	app.use(Card);
-	app.use(Row);
-	app.use(Col);
-	app.use(Tag);
-	app.use(Form);
-	app.use(Input);
+  app.use(Button);
+  app.use(Card);
+  app.use(Row);
+  app.use(Col);
+  app.use(Tag);
+  app.use(Form);
+  app.use(Input);
 }
