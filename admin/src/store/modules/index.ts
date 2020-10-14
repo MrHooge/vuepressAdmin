@@ -1,6 +1,4 @@
-import deepMerge from "deepmerge";
-import account from "./account";
-import setting from "./setting";
-const modules = deepMerge(account, setting);
+import account from './account';
+import setting from './setting';
 
-export default modules;
+export default { account, setting };
