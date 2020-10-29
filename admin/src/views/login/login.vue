@@ -12,7 +12,7 @@
             <a-tabs size="large" :tabBarStyle="{ textAlign: 'center' }" style="padding: 0 2px;">
                 <a-tab-pane tab="账户密码登录" key="1">
                     <a-form-item>
-                        <a-input size="large" v-model="form.username" placeholder="请输入账户名" allow-clear name="name">
+                        <a-input size="large" v-model="form.username" placeholder="请输入用户名" allow-clear name="name">
                             <template v-slot:prefix>
                                 <UserOutlined />
                             </template>
