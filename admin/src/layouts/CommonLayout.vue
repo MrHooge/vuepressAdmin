@@ -1,6 +1,6 @@
 <template>
 	<div class="common-layout">
-		<div class="content"><v-slot></v-slot></div>
+		<div class="content"><slot></slot></div>
 		<page-footer :link-list="footerLinks" :copyright="copyright"></page-footer>
 	</div>
 </template>
