@@ -1,6 +1,8 @@
 <template>
 	<div class="common-layout">
-		<div class="content"><slot></slot></div>
+		<div class="content">
+			<slot></slot>
+		</div>
 		<page-footer :link-list="footerLinks" :copyright="copyright"></page-footer>
 	</div>
 </template>
@@ -13,7 +15,9 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'CommonLayout',
-	components: { PageFooter },
+	components: {
+		PageFooter,
+	},
 	computed: {
 		...mapState('setting', ['footerLinks', 'copyright']),
 	},
@@ -25,7 +29,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .common-layout {
 	display: flex;
 	flex-direction: column;
@@ -37,9 +41,11 @@ export default defineComponent({
 	background-position-x: center;
 	background-position-y: 110px;
 	background-size: 100%;
+
 	.content {
 		padding: 32px 0;
 		flex: 1;
+
 		@media (min-width: 768px) {
 			padding: 112px 0 24px;
 		}
