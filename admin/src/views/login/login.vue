@@ -7,69 +7,6 @@
 			</div>
 			<div class="desc">{{ systemName }} 个人知识管理系统</div>
 		</div>
-		<!-- <div class="login">
-			<a-form @submit="onSubmit" :form="form">
-				<a-tabs size="large" :tabBarStyle="{ textAlign: 'center' }" style="padding: 0 2px;">
-					<a-tab-pane tab="账户密码登录" key="1">
-						<a-alert
-							type="error"
-							:closable="true"
-							v-show="error"
-							:message="error"
-							showIcon
-							style="margin-bottom: 24px;"
-						/>
-						<a-form-item>
-							<a-input
-								autocomplete="autocomplete"
-								size="large"
-								placeholder="admin"
-								v-decorator="[
-									'name',
-									{
-										rules: [
-											{
-												required: true,
-												message: '请输入账户名',
-												whitespace: true,
-											},
-										],
-									},
-								]"
-							>
-								<a-icon v-slot="prefix" type="user" />
-							</a-input>
-						</a-form-item>
-						<a-form-item>
-							<a-input
-								size="large"
-								placeholder="888888"
-								autocomplete="autocomplete"
-								type="password"
-								v-decorator="[
-									'password',
-									{
-										rules: [
-											{
-												required: true,
-												message: '请输入密码',
-												whitespace: true,
-											},
-										],
-									},
-								]"
-							>
-								<a-icon v-slot="prefix" type="lock" />
-							</a-input>
-						</a-form-item>
-					</a-tab-pane>
-				</a-tabs>
-				<div>
-					<a-checkbox :checked="true">自动登录</a-checkbox>
-					<a style="float: right">忘记密码</a>
-				</div>
-			</a-form>
-		</div>-->
 	</common-layout>
 </template>
 
@@ -84,7 +21,7 @@ export default defineComponent({
 	setup() {
 		const systemName = 'VuePress Admin';
 		const form = {};
-		const error = true;
+		const error = false;
 
 		function onSubmit() {
 			console.log('登录');
