@@ -1,88 +1,78 @@
 <template>
-<a-layout id="components-layout-demo-side" style="min-height: 100vh">
-    <a-layout-sider v-model:collapsed="collapsed" collapsible>
-        <div class="logo" />
-        <a-menu theme="dark" v-model:selectedKeys="selectedKeys" mode="inline">
-            <a-menu-item key="1">
-                <pie-chart-outlined />
-                <span>Option 1</span>
-            </a-menu-item>
-            <a-menu-item key="2">
-                <desktop-outlined />
-                <span>Option 2</span>
-            </a-menu-item>
-            <a-sub-menu key="sub1">
-                <template v-slot:title>
-                    <span>
-                        <user-outlined /><span>User</span>
-                    </span>
-                </template>
-                <a-menu-item key="3">Tom</a-menu-item>
-                <a-menu-item key="4">Bill</a-menu-item>
-                <a-menu-item key="5">Alex</a-menu-item>
-            </a-sub-menu>
-            <a-sub-menu key="sub2">
-                <template v-slot:title>
-                    <span>
-                        <team-outlined /><span>Team</span>
-                    </span>
-                </template>
-                <a-menu-item key="6">Team 1</a-menu-item>
-                <a-menu-item key="8">Team 2</a-menu-item>
-            </a-sub-menu>
-            <a-menu-item key="9">
-                <file-outlined />
-                <span>File</span>
-            </a-menu-item>
-        </a-menu>
-    </a-layout-sider>
-    <a-layout>
-        <a-layout-header style="background: #fff; padding: 0" />
-        <a-layout-content style="margin: 0 16px">
-            <a-breadcrumb style="margin: 16px 0">
-                <a-breadcrumb-item>User</a-breadcrumb-item>
-                <a-breadcrumb-item>Bill</a-breadcrumb-item>
-            </a-breadcrumb>
-            <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
-                Bill is a cat.
-            </div>
-        </a-layout-content>
-        <a-layout-footer style="text-align: center">
-            Ant Design ©2018 Created by Ant UED
-        </a-layout-footer>
+    <a-layout id="components-layout-trigger" style="min-height: 100vh">
+        <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+            <div class="logo" />
+            <a-menu theme="dark" mode="inline" v-model="selectedKeys">
+                <a-menu-item key="1">
+                    <user-outlined />
+                    <span>nav 1</span>
+                </a-menu-item>
+                <a-menu-item key="2">
+                    <video-camera-outlined />
+                    <span>nav 2</span>
+                </a-menu-item>
+                <a-menu-item key="3">
+                    <upload-outlined />
+                    <span>nav 3</span>
+                </a-menu-item>
+            </a-menu>
+        </a-layout-sider>
+        <a-layout>
+            <a-layout-header style="background: #fff; padding: 0">
+                <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
+                <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+            </a-layout-header>
+            <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
+                Content
+            </a-layout-content>
+        </a-layout>
     </a-layout>
-</a-layout>
 </template>
 
 <script lang="ts">
+import { defineComponent, reactive, ref } from "vue";
 import {
-    defineComponent
-} from 'vue';
-import {
-    PieChartOutlined,
-    DesktopOutlined,
     UserOutlined,
-    TeamOutlined,
-    FileOutlined,
-} from '@ant-design/icons-vue';
+    VideoCameraOutlined,
+    UploadOutlined,
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+} from "@ant-design/icons-vue";
 
 export default defineComponent({
     components: {
-        PieChartOutlined,
-        DesktopOutlined,
         UserOutlined,
-        TeamOutlined,
-        FileOutlined,
+        VideoCameraOutlined,
+        UploadOutlined,
+        MenuUnfoldOutlined,
+        MenuFoldOutlined,
     },
     setup() {
-        const collapsed: boolean = false;
-        const selectedKeys: Array < string > = ['1'];
+        const selectedKeys = reactive(["1"]);
+        const collapsed = ref(false);
         return {
+            selectedKeys,
             collapsed,
-            selectedKeys
         };
     },
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+#components-layout-trigger .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+        color: #1890ff;
+    }
+}
+#components-layout-trigger .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+</style>

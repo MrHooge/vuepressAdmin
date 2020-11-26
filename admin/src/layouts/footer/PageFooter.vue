@@ -1,21 +1,18 @@
 <template>
-<div class="footer">
-    <div class="links">
-        <a target="_blank" :key="index" :href="item.link ? item.link : 'javascript: void(0)'" v-for="(item, index) in linkList">
-            <icon-font v-if="item.icon" :type="'icon-' + item.icon" />{{ item.name }}
-        </a>
+    <div class="footer">
+        <div class="links">
+            <a target="_blank" :key="index" :href="item.link ? item.link : 'javascript: void(0)'" v-for="(item, index) in linkList">
+                <icon-font v-if="item.icon" :type="'icon-' + item.icon" />{{ item.name }}
+            </a>
+        </div>
+        <div class="copyright">Copyright
+            <CopyrightCircleOutlined /> {{ copyright }}
+        </div>
     </div>
-    <div class="copyright">Copyright
-        <CopyrightCircleOutlined /> {{ copyright }}
-    </div>
-</div>
 </template>
 
 <script>
-import {
-    CopyrightCircleOutlined,
-    createFromIconfontCN
-} from '@ant-design/icons-vue';
+import { CopyrightCircleOutlined, createFromIconfontCN } from '@ant-design/icons-vue';
 const IconFont = createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
 });
