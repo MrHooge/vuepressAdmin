@@ -1,0 +1,3 @@
+[submodule "vuepressCMS"]
+	path = vuepressCMS
+	url = git@github.com:MrHooge/vuepressCMS.git
