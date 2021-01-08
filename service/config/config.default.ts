@@ -14,10 +14,10 @@ export default (appInfo: EggAppInfo) => {
 	config.sequelize = {
 		dialect: 'mysql',
 		host: '47.97.218.202',
-		port: 12306,
-		database: 'vuepress_admin',
-		username: 'root',
-		password: '42dfb6476ce99be0',
+		port: 3306,
+		database: 'admin',
+		username: 'admin',
+		password: '12341234',
 		timezone: '+08:00', // 表示为东八区的时间
 	}
 
